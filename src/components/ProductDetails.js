@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { inventory } from '../utils/inventory';
 import './ProductDetails.css';
 
-export default function ProductDetails({ addToCart }) {
+export default function ProductDetails({inventory, addToCart }) {
   const [qty, setQty] = useState(0);
 
   const { id } = useParams();

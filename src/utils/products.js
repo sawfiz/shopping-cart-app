@@ -1,4 +1,4 @@
-export const inventory = [
+export const products = [
   {
     name: 'Orbeez Set 1',
     description: '10 large, 20 midium and 100 small',

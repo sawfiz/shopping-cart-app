@@ -1,11 +1,11 @@
 import './Home.css';
 import Inventory from './components/Inventory';
 
-function Home({ addToCart }) {
+function Home({ inventory }) {
   return (
     <div>
       <header>Products</header>
-      <Inventory addToCart={addToCart} />
+      <Inventory  inventory={inventory} />
     </div>
   );
 }
