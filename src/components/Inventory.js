@@ -1,13 +1,16 @@
 import React from 'react';
 import { inventory } from '../utils/inventory';
-import Product from './Product';
-import './Inventory.css'
+import ProductBriefInventory from './ProductBriefInventory';
+
+import './Inventory.css';
 
 export default function Inventory() {
   return (
-    <div className='inventory'>
+    <div className="inventory">
       {inventory.map((item, index) => (
-        <Product key={index} item={item}/>
+        <div>
+          <ProductBriefInventory key={index} item={item} index={index} />
+        </div>
       ))}
     </div>
   );

@@ -1,14 +1,11 @@
 import './Home.css';
 import Inventory from './components/Inventory';
 
-function Home() {
-
-  
-
+function Home({ addToCart }) {
   return (
-    <div className="App">
-      <header>Home Page</header>
-      <Inventory />
+    <div>
+      <header>Products</header>
+      <Inventory addToCart={addToCart} />
     </div>
   );
 }
