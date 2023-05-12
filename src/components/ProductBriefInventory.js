@@ -9,7 +9,7 @@ export default function ProductBriefInventory({ item }) {
         <div>
           <img src={item.image} alt="Orbeez" />
         </div>
-        <div>{item.description}</div>
+        <div className='description'>{item.description}</div>
         <div className="bold">${item.price.toFixed(2)}</div>
       </div>
     </Link>

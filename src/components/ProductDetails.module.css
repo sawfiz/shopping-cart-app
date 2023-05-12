@@ -1,0 +1,40 @@
+.productContainer {
+  width: 60vw;
+  margin: auto;
+  border: 1px black solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}  
+  
+.details {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+}
+
+input {
+  text-align: right;
+}

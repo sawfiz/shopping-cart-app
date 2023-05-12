@@ -1,5 +1,5 @@
 .inventory .product {
-  height: 13rem;
+  height: 14rem;
   color: black;
   border: 1px black solid;
   display: grid;
@@ -7,12 +7,14 @@
   gap: 0.5rem;
   text-align:center;
   padding: 1rem;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 
 .inventory .product * {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* border: 1px solid red; */
 }
 
 .inventory .product .bold {
@@ -22,4 +24,11 @@
 .inventory .product img {
   width: 80px;
   height: 80px;
+}
+
+.inventory .product .description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

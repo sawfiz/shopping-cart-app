@@ -1,0 +1,10 @@
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav li {
+  list-style-type: none;
+  font-weight: bold;
+  color: black;
+}

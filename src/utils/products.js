@@ -1,7 +1,7 @@
 export const products = [
   {
     name: 'Orbeez Set 1',
-    description: '10 large, 20 midium and 100 small',
+    description: '10 large, 20 medium and 100 small',
     price: 1.5,
     image: process.env.PUBLIC_URL + '/images/face00.png',
   },

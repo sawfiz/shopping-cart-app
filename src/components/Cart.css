@@ -5,8 +5,9 @@
 
 .cart-item {
   width: 60vw;
+  margin: auto;
   display: grid;
-  grid-template-columns: 2fr 3fr 10fr 3fr 5fr 2fr 2fr;
+  grid-template-columns: 2fr 3fr 10fr 3fr 5fr 4fr 2fr;
   border-bottom: 1px black solid;
 }
 
@@ -40,7 +41,7 @@
   padding: 3px;
 }
 
-.cart-item .number {
+.cart-item .right {
   display: flex;
   justify-content: right;
   align-items: center;
