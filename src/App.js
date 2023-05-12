@@ -1,16 +1,22 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import ProductDetails from './components/ProductDetails';
 import Cart from './Cart';
 
 const App = () => {
+  const [cart, setCart] = useState([]);
 
-  const [cart, setCart] = useState(new Set())
+  function addToCart(order) {
+    let tempCart = [...cart]
+    const target = tempCart.find(o => o.item.name === order.item.name)
+    if (target) {
+      target.qty += order.qty;
+    } else {
+      tempCart = [...tempCart, order]
+    }
 
-  function addToCart (order) {
-    const tempCart = new Set([...cart, order])
-    setCart(tempCart)
+    setCart(tempCart);
   }
 
   return (
@@ -26,9 +32,12 @@ const App = () => {
         </ul>
       </nav>
       <Routes>
-        <Route path="/" element={<Home  />} />
-        <Route path="/product/:id" element={<ProductDetails addToCart={addToCart}/>} />
-        <Route path="/cart" element={<Cart cart={cart}/>} />
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/product/:id"
+          element={<ProductDetails addToCart={addToCart} />}
+        />
+        <Route path="/cart" element={<Cart cart={cart} />} />
       </Routes>
     </>
   );
