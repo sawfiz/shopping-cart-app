@@ -1,10 +1,25 @@
-.product {
-  width: 100px;
-  height: 100px;
+.inventory .product {
+  height: 13rem;
+  color: black;
+  border: 1px black solid;
+  display: grid;
+  grid-template-rows: 1fr 3fr 2fr 1fr;
+  gap: 0.5rem;
+  text-align:center;
+  padding: 1rem;
 }
 
-.product img {
+.inventory .product * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inventory .product .bold {
+  font-weight: bold;
+}
+
+.inventory .product img {
   width: 80px;
   height: 80px;
 }
-

@@ -1,6 +1,11 @@
 .product {
-  width: 100px;
-  height: 100px;
+  height: 12rem;
+  border: 1px black solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .product img {

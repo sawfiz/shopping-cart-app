@@ -7,11 +7,11 @@ export default function ProductDetails({inventory, addToCart }) {
   const [qty, setQty] = useState(0);
 
   const { id } = useParams();
-  if (id >= inventory.length) {
+  const item = inventory.find(item => item.uid === id);
+  if (!item) {
     return <div> Not found </div>;
   }
 
-  const item = inventory[id];
 
   function updateQty(e) {
     setQty(parseInt(e.target.value));
@@ -45,7 +45,6 @@ export default function ProductDetails({inventory, addToCart }) {
       <button onClick={() => addToCart({ item: item, qty: qty })}>
         Add to cart
       </button>
-      <Link to={`/product/${id}`}> Link {id}</Link>
     </div>
   );
 }

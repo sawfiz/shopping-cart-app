@@ -6,8 +6,8 @@ import './Inventory.css';
 export default function Inventory({inventory}) {
   return (
     <div className="inventory">
-      {inventory.map((item, index) => (
-          <ProductBriefInventory key={item.uid} item={item} index={index} />
+      {inventory.map((item) => (
+          <ProductBriefInventory key={item.uid} item={item}/>
       ))}
     </div>
   );
