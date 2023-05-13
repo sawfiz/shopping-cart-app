@@ -13,8 +13,17 @@ nav ul {
   justify-content: space-around;
 }
 
-nav li {
+.nav-link {
   list-style-type: none;
+  width: 5rem;
+}
+
+.nav-link a {
+  text-decoration: none;
   font-weight: bold;
   color: white;
+}
+
+.nav-link a:hover {
+  font-weight: 900;
 }

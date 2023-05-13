@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Modal from './Modal';
 import styles from './ProductDetails.module.css';
 
-export default function ProductDetails({inventory, addToCart }) {
+export default function ProductDetails({ inventory, addToCart }) {
   const [qty, setQty] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   const { id } = useParams();
-  const item = inventory.find(item => item.uid === id);
+  const item = inventory.find((item) => item.uid === id);
   if (!item) {
     return <div> Not found </div>;
   }
-
 
   function updateQty(e) {
     setQty(parseInt(e.target.value));
@@ -26,10 +27,23 @@ export default function ProductDetails({inventory, addToCart }) {
     setQty(temp);
   }
 
+  function addToCardAndShowModal() {
+    if (qty) {
+      addToCart({ item: item, qty: qty });
+      setShowModal(true);
+    }
+  }
+
+  function hideModal() {
+    setShowModal(false);
+  }
+
   return (
     <div className={styles.productDetails}>
       <div className={styles.productContainer}>
-        <div className={styles.imgContainer}><img src={item.image} alt="Orbeez" /></div>
+        <div className={styles.imgContainer}>
+          <img src={item.image} alt="Orbeez" />
+        </div>
         <div className={styles.details}>
           <div className={styles.bold}>{item.name}</div>
           <div>{item.description}</div>
@@ -45,11 +59,10 @@ export default function ProductDetails({inventory, addToCart }) {
             />
             <button onClick={incrementQty}>+</button>
           </div>
-          <button onClick={() => addToCart({ item: item, qty: qty })}>
-            Add to cart
-          </button>
+          <button onClick={addToCardAndShowModal}>Add to cart</button>
         </div>
       </div>
+      <Modal showModal={showModal} hideModal={hideModal} />
     </div>
   );
 }

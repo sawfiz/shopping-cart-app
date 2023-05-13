@@ -6,6 +6,7 @@ import { products } from './utils/products';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
+import Modal from './components/Modal';
 import ProductDetails from './components/ProductDetails';
 
 import './App.css';
@@ -44,32 +45,22 @@ const App = () => {
   }
 
   function deleteOrder(order) {
-    let tempCart = cart.filter(o => o.uid !== order.uid)
-    setCart(tempCart)
-  }
-
-  const NavLiStyle = {
-    textDecoration: 'none', color:'white'
+    let tempCart = cart.filter((o) => o.uid !== order.uid);
+    setCart(tempCart);
   }
 
   return (
     <div className="App">
       <nav>
         <ul>
-          <li>
-            <Link to="/" style={NavLiStyle}>
-              Home
-            </Link>
+          <li className="nav-link">
+            <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/shop" style={NavLiStyle}>
-              Shop
-            </Link>
+          <li className="nav-link">
+            <Link to="/shop">Shop</Link>
           </li>
-          <li>
-            <Link to="/cart" style={NavLiStyle}>
-              Cart ({cart.length})
-            </Link>
+          <li className="nav-link">
+            <Link to="/cart">Cart ({cart.length})</Link>
           </li>
         </ul>
       </nav>
@@ -87,7 +78,13 @@ const App = () => {
         />
         <Route
           path="/cart"
-          element={<Cart cart={cart} updateOrder={updateOrder} deleteOrder={deleteOrder}/>}
+          element={
+            <Cart
+              cart={cart}
+              updateOrder={updateOrder}
+              deleteOrder={deleteOrder}
+            />
+          }
         />
       </Routes>
       <Footer />
