@@ -3,10 +3,10 @@
   /* border: 1px red solid; */
 }
 .cart {
-  padding: 2rem 0;
-  width: 100%;
+  padding: 3rem 0;
+  width:100vw;
   height: calc(100vh - 3rem - 2rem);
-  background: url('https://source.unsplash.com/6JgOnrS9REY');
+  background: url('https://source.unsplash.com/wpyQ_uSsQdU');
   background-position: center;
   background-repeat: no-repeat;
   background-origin: content-box;
