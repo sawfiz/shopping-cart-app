@@ -1,0 +1,16 @@
+.footer {
+  color: white;
+  background-color: #333;
+  font-size: 0.8rem;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.github {
+  color: white;
+}
+

@@ -4,10 +4,12 @@ import uniqid from 'uniqid';
 
 import { products } from './utils/products';
 import Home from './components/Home';
-import ProductDetails from './components/ProductDetails';
+import Shop from './components/Shop';
 import Cart from './components/Cart';
+import ProductDetails from './components/ProductDetails';
 
 import './App.css';
+import Footer from './components/Footer';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -47,12 +49,17 @@ const App = () => {
   }
 
   return (
-    <>
+    <div className="App">
       <nav>
         <ul>
           <li>
             <Link to="/" style={{ textDecoration: 'none' }}>
               Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/shop" style={{ textDecoration: 'none' }}>
+              Shop
             </Link>
           </li>
           <li>
@@ -63,7 +70,8 @@ const App = () => {
         </ul>
       </nav>
       <Routes>
-        <Route path="/" element={<Home inventory={inventory.current} />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop inventory={inventory.current} />} />
         <Route
           path="/product/:id"
           element={
@@ -78,7 +86,8 @@ const App = () => {
           element={<Cart cart={cart} updateOrder={updateOrder} deleteOrder={deleteOrder}/>}
         />
       </Routes>
-    </>
+      <Footer />
+    </div>
   );
 };
 

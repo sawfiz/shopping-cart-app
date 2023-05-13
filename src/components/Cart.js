@@ -11,7 +11,7 @@ export default function Cart({ cart, updateOrder, deleteOrder }) {
   );
 
   return (
-    <div>
+    <div className="cart">
       <div className="cart-item">
         <div className="table-header">Item</div>
         <div className="table-header"></div>
@@ -44,7 +44,7 @@ export default function Cart({ cart, updateOrder, deleteOrder }) {
       </div>
 
       <div>
-        <button onClick={() => checkOut({})}>Check out</button>
+        <button className="checkout-btn" onClick={() => checkOut({})}>Check out</button>
       </div>
     </div>
   );

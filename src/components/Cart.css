@@ -2,6 +2,16 @@
   box-sizing: border-box;
   /* border: 1px red solid; */
 }
+.cart {
+  padding: 2rem 0;
+  width: 100%;
+  height: calc(100vh - 3rem - 2rem);
+  background: url('https://source.unsplash.com/6JgOnrS9REY');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: cover;
+}
 
 .cart-item {
   width: 60vw;
@@ -60,4 +70,8 @@
   width: 3rem;
   height: 1.5rem;
   text-align: right;
+}
+
+.checkout-btn {
+  margin: 3rem;
 }

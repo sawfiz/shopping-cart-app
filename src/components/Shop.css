@@ -1,0 +1,9 @@
+.shop {
+  width: 100%;
+  height: calc(100vh - 3rem - 2rem);
+  background: url('https://source.unsplash.com/6JgOnrS9REY');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: cover;
+}
