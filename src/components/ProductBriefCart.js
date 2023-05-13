@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './ProductBriefCart.css';
 
 export default function ProductBriefCart({ index, order, updateOrder, deleteOrder }) {

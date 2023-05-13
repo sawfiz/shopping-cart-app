@@ -48,22 +48,26 @@ const App = () => {
     setCart(tempCart)
   }
 
+  const NavLiStyle = {
+    textDecoration: 'none', color:'white'
+  }
+
   return (
     <div className="App">
       <nav>
         <ul>
           <li>
-            <Link to="/" style={{ textDecoration: 'none' }}>
+            <Link to="/" style={NavLiStyle}>
               Home
             </Link>
           </li>
           <li>
-            <Link to="/shop" style={{ textDecoration: 'none' }}>
+            <Link to="/shop" style={NavLiStyle}>
               Shop
             </Link>
           </li>
           <li>
-            <Link to="/cart" style={{ textDecoration: 'none' }}>
+            <Link to="/cart" style={NavLiStyle}>
               Cart ({cart.length})
             </Link>
           </li>
