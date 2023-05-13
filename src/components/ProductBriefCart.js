@@ -7,7 +7,9 @@ export default function ProductBriefCart({ index, order, updateOrder, deleteOrde
   const item = order.item;
 
   function updateQty(e) {
-    setQty(parseInt(e.target.value));
+    const temp = e.target.value;
+    setQty(parseInt(temp));
+    updateOrder(order, temp);
   }
 
   function incrementQty() {
