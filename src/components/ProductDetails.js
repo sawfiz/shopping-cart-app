@@ -62,7 +62,7 @@ export default function ProductDetails({ inventory, addToCart }) {
           <button onClick={addToCardAndShowModal}>Add to cart</button>
         </div>
       </div>
-      <Modal showModal={showModal} hideModal={hideModal} />
+      <Modal showModal={showModal} hideModal={hideModal} message="Added to cart"/>
     </div>
   );
 }

@@ -1,14 +1,25 @@
-import React from 'react';
+import { useState } from 'react';
 import ProductBriefCart from './ProductBriefCart';
+import Modal from './Modal';
 import './Cart.css';
 
 export default function Cart({ cart, updateOrder, deleteOrder }) {
   function checkOut() {}
 
+  const [showModal, setShowModal] = useState(false);
+
   const total = cart.reduce(
     (acc, current) => acc + current.item.price * current.qty,
     0
   );
+
+  function showModalFunc() {
+    setShowModal(true);
+  }
+
+  function hideModal() {
+    setShowModal(false);
+  }
 
   return (
     <div className="cart">
@@ -44,8 +55,15 @@ export default function Cart({ cart, updateOrder, deleteOrder }) {
       </div>
 
       <div>
-        <button className="checkout-btn" onClick={() => checkOut({})}>Check out</button>
+        <button className="checkout-btn" onClick={showModalFunc}>
+          Check out
+        </button>
       </div>
+      <Modal
+        showModal={showModal}
+        hideModal={hideModal}
+        message="You can check out anytime you like, but you can never leave!"
+      />
     </div>
   );
 }
