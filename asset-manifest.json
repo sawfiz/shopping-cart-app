@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.0731d6e5.css",
-    "main.js": "/static/js/main.b4644d28.js",
-    "index.html": "/index.html",
-    "main.0731d6e5.css.map": "/static/css/main.0731d6e5.css.map",
-    "main.b4644d28.js.map": "/static/js/main.b4644d28.js.map"
+    "main.css": "/http//sawfiz.github.io/shopping-cart-app/static/css/main.0731d6e5.css",
+    "main.js": "/http//sawfiz.github.io/shopping-cart-app/static/js/main.948a2bb3.js",
+    "index.html": "/http//sawfiz.github.io/shopping-cart-app/index.html",
+    "main.0731d6e5.css.map": "/http//sawfiz.github.io/shopping-cart-app/static/css/main.0731d6e5.css.map",
+    "main.948a2bb3.js.map": "/http//sawfiz.github.io/shopping-cart-app/static/js/main.948a2bb3.js.map"
   },
   "entrypoints": [
     "static/css/main.0731d6e5.css",
-    "static/js/main.b4644d28.js"
+    "static/js/main.948a2bb3.js"
   ]
 }
