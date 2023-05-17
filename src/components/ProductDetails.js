@@ -7,16 +7,15 @@ import Modal from './Modal';
 import styles from './ProductDetails.module.css';
 
 export default function ProductDetails({ inventory }) {
-  const { addToCart } = useContext(CartContext);
+  const { dispatch } = useContext(CartContext);
 
-
-  
   const [qty, setQty] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-
   const { id } = useParams();
-  const item = inventory.find((item) => item.uid === id);
+  const item = inventory.find((item) => {
+    return item.uid === id;
+  });
   if (!item) {
     return <div> Not found </div>;
   }
@@ -37,7 +36,7 @@ export default function ProductDetails({ inventory }) {
 
   function addToCardAndShowModal() {
     if (qty) {
-      addToCart({ item: item, qty: qty });
+      dispatch({ type: 'ADD_TO_CART', order: { item, qty } });
       setShowModal(true);
     }
   }

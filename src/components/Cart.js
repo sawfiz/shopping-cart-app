@@ -5,8 +5,7 @@ import Modal from './Modal';
 import './Cart.css';
 
 export default function Cart() {
-  const {cart, updateOrder, deleteOrder} = useContext(CartContext)
-
+  const { cart } = useContext(CartContext);
 
   function checkOut() {}
 
@@ -43,8 +42,6 @@ export default function Cart() {
             key={order.uid}
             index={index}
             order={order}
-            updateOrder={updateOrder}
-            deleteOrder={deleteOrder}
           />
         ))}
       </div>

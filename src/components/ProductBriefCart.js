@@ -1,27 +1,35 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
 import './ProductBriefCart.css';
 
-export default function ProductBriefCart({ index, order, updateOrder, deleteOrder }) {
+export default function ProductBriefCart({
+  index,
+  order
+}) {
+  const { dispatch } = useContext(CartContext);
   const [qty, setQty] = useState(order.qty);
   const item = order.item;
 
   function updateQty(e) {
     const temp = e.target.value;
     setQty(parseInt(temp));
-    updateOrder(order, temp);
+    dispatch({type: 'UPDATE_QTY', action: {order, temp}})
+    // updateOrder(order, temp);
   }
-
+  
   function incrementQty() {
     let temp = qty + 1;
     setQty(temp);
-    updateOrder(order, temp);
+    dispatch({type: 'UPDATE_QTY', action: {order, temp}})
+    // updateOrder(order, temp);
   }
-
+  
   function decrementQty() {
     let temp = qty - 1;
     temp = temp < 0 ? 0 : temp;
     setQty(temp);
-    updateOrder(order, temp);
+    dispatch({type: 'UPDATE_QTY', action: {order, temp}})
+    // updateOrder(order, temp);
   }
 
   return (
@@ -47,7 +55,7 @@ export default function ProductBriefCart({ index, order, updateOrder, deleteOrde
       </div>
       <div className="right">{(item.price * qty).toFixed(2)}</div>
       <div className="table-content-center">
-        <button onClick={()=>deleteOrder(order)}>❌</button>
+        <button onClick={() => dispatch({type: 'DELETE_ORDER', order})}>❌</button>
       </div>
     </div>
   );
