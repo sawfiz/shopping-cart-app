@@ -1,11 +1,19 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { CartContext } from '../contexts/CartContext';
+
 import Modal from './Modal';
 import styles from './ProductDetails.module.css';
 
-export default function ProductDetails({ inventory, addToCart }) {
+export default function ProductDetails({ inventory }) {
+  const { addToCart } = useContext(CartContext);
+
+
+  
   const [qty, setQty] = useState(0);
   const [showModal, setShowModal] = useState(false);
+
 
   const { id } = useParams();
   const item = inventory.find((item) => item.uid === id);
@@ -62,7 +70,11 @@ export default function ProductDetails({ inventory, addToCart }) {
           <button onClick={addToCardAndShowModal}>Add to cart</button>
         </div>
       </div>
-      <Modal showModal={showModal} hideModal={hideModal} message="Added to cart"/>
+      <Modal
+        showModal={showModal}
+        hideModal={hideModal}
+        message="Added to cart"
+      />
     </div>
   );
 }

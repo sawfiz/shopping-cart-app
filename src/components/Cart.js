@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import ProductBriefCart from './ProductBriefCart';
+import { CartContext } from '../contexts/CartContext';
 import Modal from './Modal';
 import './Cart.css';
 
-export default function Cart({ cart, updateOrder, deleteOrder }) {
+export default function Cart() {
+  const {cart, updateOrder, deleteOrder} = useContext(CartContext)
+
+
   function checkOut() {}
 
   const [showModal, setShowModal] = useState(false);
