@@ -13,14 +13,14 @@ export default function ProductBriefCart({
   function updateQty(e) {
     const temp = e.target.value;
     setQty(parseInt(temp));
-    dispatch({type: 'UPDATE_QTY', action: {order, temp}})
+    dispatch({type: 'UPDATE_ORDER', data: {order, temp}})
     // updateOrder(order, temp);
   }
   
   function incrementQty() {
     let temp = qty + 1;
     setQty(temp);
-    dispatch({type: 'UPDATE_QTY', action: {order, temp}})
+    dispatch({type: 'UPDATE_ORDER', data: {order, temp}})
     // updateOrder(order, temp);
   }
   
@@ -28,7 +28,7 @@ export default function ProductBriefCart({
     let temp = qty - 1;
     temp = temp < 0 ? 0 : temp;
     setQty(temp);
-    dispatch({type: 'UPDATE_QTY', action: {order, temp}})
+    dispatch({type: 'UPDATE_ORDER', data: {order, temp}})
     // updateOrder(order, temp);
   }
 

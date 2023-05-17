@@ -23,8 +23,8 @@ export default function cartReducer(state, action) {
 
     // Update the order when modified in Cart
     case 'UPDATE_ORDER':
-      order = action.order;
-      qty = action.temp;
+      order = action.data.order;
+      qty = action.data.temp;
       tempCart = [...state];
       target = tempCart.find((o) => o.item.name === order.item.name);
       if (target) {
@@ -33,7 +33,7 @@ export default function cartReducer(state, action) {
       return tempCart;
 
     case 'DELETE_ORDER':
-      tempCart = state.filter((o) => o.uid !== order.uid);
+      tempCart = state.filter((o) => o.uid !== action.order.uid);
       return tempCart;
 
     default:
